@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * 十大经典排序
+ * https://www.cnblogs.com/guoyaohua/p/8600214.html
  */
 public class Sort {
 
