@@ -27,6 +27,11 @@ public class Sort {
         t2=System.nanoTime();
         print("选择排序",selectionSort,t1,t2);
 
+        t1=System.nanoTime();
+        int[] insertionSort = insertionSort(numbers.clone());
+        t2=System.nanoTime();
+        print("插入排序",insertionSort,t1,t2);
+
 
     }
 
@@ -78,16 +83,24 @@ public class Sort {
         return numbers;
     }
 
+    /**
+     * 插入排序
+     * @param numbers
+     * @return
+     */
     private static int[] insertionSort(int []numbers){
-        for(int i=0;i<numbers.length;i++){
-            int temp = numbers[i];
-            for(int j=i;j>0;j--){
-                if(temp>numbers[j]){
 
-                }
-//                numbers[j]=numbers[]
+        int current ;
+        for(int i=1;i<numbers.length;i++){
+            current = numbers[i];
+            int preIndex=i-1;
+            while (preIndex>=0 && numbers[preIndex]>current){
+                numbers[preIndex+1]=numbers[preIndex];
+                preIndex--;
             }
+            numbers[preIndex+1] = current;
         }
-        return null;
+        return numbers;
+
     }
 }
